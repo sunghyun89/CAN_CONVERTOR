@@ -14,7 +14,13 @@ SET FILENAME2=%~n11%~x1
 SET FILENAME3=%~n112%~x1
 
 :: 라인 제거 스크립트 실행
-python csv1.py "%FILENAME1%.csv"
+:: 두 번째 인자가 있으면 전달, 없으면 그냥 전달하지 않음 (default=1-134)
+:: 1-128만 삭제할 경우 csv1.py 파일명 1-128
+IF "%~2"=="" (
+    python csv1.py "%FILENAME1%.csv"
+) ELSE (
+    python csv1.py "%FILENAME1%.csv" "%~2"
+)
 
 :: 컬럼 제거 실행
 python csv2.py "%FILENAME2%.csv"
