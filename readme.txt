@@ -17,6 +17,9 @@ ex> bcm.csv 원본 파일
    rspid	75C
    system	BCM
 
+1-1. csv.bat bcm 1-128
+   1-128행만 삭제 (기본값:1-134)
+
 2. vspy1.py bcm.txt 또는 python vspy1.py bcm.txt
    bcm1.txt : 출력물 가공 (수동으로 데이터 확인 해야 함)
 
